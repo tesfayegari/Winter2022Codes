@@ -1,0 +1,29 @@
+body {
+    margin: 0;
+    font-family: "Lato", sans-serif;
+}
+.w3-hide-large, .w3-dropdown-content {
+    display: none !important;
+}
+.w3-top {
+    top: 0;
+    position: fixed;
+    width: 100%;
+}
+.w3-black {
+    color: #fff;
+    background-color: #000;
+}
+
+.w3-bar .w3-bar-item {
+    float: left;
+    width: auto;
+    padding: 12px 24px;
+    display: block;
+    color: #fff;
+    text-decoration: none;
+}
+.w3-button:hover {
+    color: #000;
+    background-color: #ccc;
+}
