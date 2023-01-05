@@ -1,6 +1,8 @@
 body {
     margin: 0;
     font-family: "Lato", sans-serif;
+    font-size: 15px;
+    line-height: 1.5;
 }
 .w3-hide-large, .w3-dropdown-content {
     display: none !important;
@@ -26,4 +28,44 @@ body {
 .w3-button:hover {
     color: #000;
     background-color: #ccc;
+}
+
+.w3-dropdown-hover {
+    position: static;
+    float:left;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.w3-button {
+    border: none;
+    display: inline-block;    
+    vertical-align: middle;
+    overflow: hidden;
+    text-decoration: none;
+    color: inherit;
+    background-color: inherit;
+    text-align: center;
+    cursor: pointer;
+    padding: 12px 24px!important;
+}
+
+.w3-bar:before, .w3-bar:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+.w3-right {
+    float: right!important;
+}
+.w3-padding-large {
+    padding: 12px 24px!important;
+}
+a {
+    color: inherit;
+    background-color: transparent;
+}
+.w3-hover-red:hover {
+    color: #fff!important;
+    background-color: #f44336!important;
 }
