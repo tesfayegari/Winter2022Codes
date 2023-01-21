@@ -1,0 +1,40 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/package-solution.schema.json",
+  "solution": {
+    "name": "show-all-lists-and-item-count-client-side-solution",
+    "id": "34bb5de5-c2b4-4eed-9a3e-895ce1476c24",
+    "version": "1.0.0.0",
+    "includeClientSideAssets": true,
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false,
+    "developer": {
+      "name": "",
+      "websiteUrl": "",
+      "privacyUrl": "",
+      "termsOfUseUrl": "",
+      "mpnId": "Undefined-1.16.1"
+    },
+    "metadata": {
+      "shortDescription": {
+        "default": "show-all-lists-and-item-count description"
+      },
+      "longDescription": {
+        "default": "show-all-lists-and-item-count description"
+      },
+      "screenshotPaths": [],
+      "videoUrl": "",
+      "categories": []
+    },
+    "features": [
+      {
+        "title": "show-all-lists-and-item-count Feature",
+        "description": "The feature that activates elements of the show-all-lists-and-item-count solution.",
+        "id": "26d89aa7-ae10-4e87-9a66-8ae8e1a53e48",
+        "version": "1.0.0.0"
+      }
+    ]
+  },
+  "paths": {
+    "zippedPackage": "solution/show-all-lists-and-item-count.sppkg"
+  }
+}

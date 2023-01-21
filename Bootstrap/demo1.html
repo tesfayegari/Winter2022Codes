@@ -10,14 +10,17 @@
 </head>
 
 <body>
-
+    <div class="alert alert-danger p-1 mb-0" >
+        <strong>Warning!</strong> This alert box could indicate a warning that might need attention.
+      </div>
     <div class="container-fluid bg-primary text-white">
         Container fluid
 
     </div>
     <div class="container">
-        <div class="row">
+        <div class="row mt-2">
             <div class="col-3">
+               <div class="card p-3">
                 <h5>Car care, low prices</h5>
                 <div class="row">
                     <div class="col-6">
@@ -47,31 +50,37 @@
                     </div>
                 </div>
                 <a href="#">Shop automotive deals</a>
+               </div>
             </div>
             <div class="col-3">
-                <h5>Disney magic awaits</h5>
-                <div class="row">
-                    <div class="col-12">
-                        <img class="w-100"
-                            src="https://images-na.ssl-images-amazon.com/images/W/WEBP_402378-T1/images/G/01/us-manual-merchandising/Worked-image/XCM_CUTTLE_1527103_2832184_379x304_1X_en_US._SY304_CB618097385_.jpg"
-                            alt="">
+                <div class="card p-3">
+                    <h5>Disney magic awaits</h5>
+                    <div class="row">
+                        <div class="col-12">
+                            <img class="w-100 img-thumbnail"
+                                src="https://images-na.ssl-images-amazon.com/images/W/WEBP_402378-T1/images/G/01/us-manual-merchandising/Worked-image/XCM_CUTTLE_1527103_2832184_379x304_1X_en_US._SY304_CB618097385_.jpg"
+                                alt="">
+                        </div>
                     </div>
+                    <a href="#">Shop gifts</a>
                 </div>
-                <a href="#">Shop gifts</a>
             </div>
             <div class="col-3">
-                <h5>Gift cards for the New Year</h5>
-                <div class="row">
-                    <div class="col-12">
-                        <img class="w-100"
-                            src="https://images-na.ssl-images-amazon.com/images/W/WEBP_402378-T1/images/G/01/GiftCards/Consumer/multi-product/NYNY_2022/US_NYNY_GW_379x304_1x_EN._SY304_CB620097660_.jpg"
-                            alt="">
+                <div class="card p-3">
+                    <h5>Gift cards for the New Year</h5>
+                    <div class="row">
+                        <div class="col-12">
+                            <img class="w-100"
+                                src="https://images-na.ssl-images-amazon.com/images/W/WEBP_402378-T1/images/G/01/GiftCards/Consumer/multi-product/NYNY_2022/US_NYNY_GW_379x304_1x_EN._SY304_CB620097660_.jpg"
+                                alt="">
+                        </div>
                     </div>
+                    <a href="#">Shop gift cards</a>
                 </div>
-                <a href="#">Shop gift cards</a>
             </div>
             <div class="col-3">
-                <h5>Characters you love</h5>
+                <div class="card p-3">
+                    <h5>Characters you love</h5>
                 <div class="row">
                     <div class="col-6">
                         <img class="w-100"
@@ -100,13 +109,38 @@
                     </div>
                 </div>
                 <a href="#">Shop automotive deals</a>
+                </div>
             </div>
         </div>
         <div class="row">
-            <div class="col-3">Col1</div>
-            <div class="col-9">Col2</div>
+            <h2>Table</h2>
+            <table class="table table-striped table-hover">
+                <thead>
+                    <tr class="table-danger">
+                        <th>Firstname</th>
+                        <th>Lastname</th>
+                        <th>Email</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>John</td>
+                        <td>Doe</td>
+                        <td>john@example.com</td>
+                    </tr>
+                    <tr>
+                        <td>Mary</td>
+                        <td>Moe</td>
+                        <td>mary@example.com</td>
+                    </tr>
+                    <tr>
+                        <td>July</td>
+                        <td>Dooley</td>
+                        <td>july@example.com</td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
-
     </div>
 
 </body>

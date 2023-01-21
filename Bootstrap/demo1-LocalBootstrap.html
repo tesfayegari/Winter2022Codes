@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootstrap Demo Document 1</title>
+    <link rel="stylesheet" href="./bootstrap-5.3.0-alpha1-dist/css/bootstrap.min.css">
+    <script src="./bootstrap-5.3.0-alpha1-dist/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="javascript:void(0)">Logo</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="mynavbar">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="javascript:void(0)">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="javascript:void(0)">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="javascript:void(0)">Contact</a>
+                    </li>
+                </ul>
+                <form class="d-flex">
+                    <input class="form-control me-2" type="text" placeholder="Search">
+                    <button class="btn btn-primary" type="button">Search</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+    <div class="alert alert-danger p-1 mb-0">
+        <strong>Warning!</strong> This alert box could indicate a warning that might need attention.
+    </div>
+
+    <!-- Carousel -->
+    <div id="demo" class="carousel slide" data-bs-ride="carousel">
+
+        <!-- Indicators/dots -->
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
+            <button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
+            <button type="button" data-bs-target="#demo" data-bs-slide-to="2"></button>
+            <button type="button" data-bs-target="#demo" data-bs-slide-to="3"></button>
+        </div>
+
+        <!-- The slideshow/carousel -->
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="https://www.w3schools.com/bootstrap5/la.jpg" alt="Los Angeles" class="d-block" style="width:100%">
+                <div class="carousel-caption">
+                    <h3>Los Angeles</h3>
+                    <p>We had such a great time in LA!</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="https://www.w3schools.com/bootstrap5/chicago.jpg" alt="Chicago" class="d-block" style="width:100%">
+                <div class="carousel-caption">
+                    <h3>Chicago</h3>
+                    <p>Thank you, Chicago!</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="https://www.w3schools.com/bootstrap5/ny.jpg" alt="New York" class="d-block" style="width:100%">
+                <div class="carousel-caption">
+                    <h3>New York</h3>
+                    <p>We love the Big Apple!</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8Y2l0eXxlbnwwfHwwfHw%3D&w=1000&q=80" alt="New York" class="d-block" style="width:100%">
+                <div class="carousel-caption">
+                    <h3>What city is this</h3>
+                    <p>We love the the Architecture!</p>
+                    <a href="#" class="btn btn-primary">Learn more ....</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Left and right controls/icons -->
+        <button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next">
+            <span class="carousel-control-next-icon"></span>
+        </button>
+    </div>
+
+    <div class="container-fluid bg-primary text-white">
+        Container fluid
+
+    </div>
+    <div class="container">
+        <div class="row mt-2">
+            <div class="col-3">
+                <div class="card p-3">
+                    <h5>Car care, low prices</h5>
+                    <div class="row">
+                        <div class="col-6">
+                            <img class="w-100"
+                                src="https://images-na.ssl-images-amazon.com/images/W/WEBP_402378-T1/images/G/01/Automotive/DGM/Gift_Guide_6_quad_186x116._SY116_CB607432844_.jpg"
+                                alt="">
+                            <div>Cleaning Kits</div>
+                        </div>
+                        <div class="col-6">
+                            <img class="w-100"
+                                src="https://images-na.ssl-images-amazon.com/images/W/WEBP_402378-T1/images/G/01/Automotive/DGM/Vacuum_1_186x116._SY116_CB631808133_.jpg"
+                                alt="">
+                            <div>Vacuum</div>
+                        </div>
+                    </div>
+                    <div class="row mt-3">
+                        <div class="col-6">
+                            <img class="w-100"
+                                src="https://images-na.ssl-images-amazon.com/images/W/WEBP_402378-T1/images/G/01/Automotive/DGM/Wipes_186_116._SY116_CB626640630_.jpg"
+                                alt="">
+                            <div>Wipes</div>
+                        </div>
+                        <div class="col-6"> <img class="w-100"
+                                src="https://images-na.ssl-images-amazon.com/images/W/WEBP_402378-T1/images/G/01/Automotive/DGM/Car_care_gel_v2_186x116._SY116_CB619399951_.jpg"
+                                alt="">
+                            <div>Gel</div>
+                        </div>
+                    </div>
+                    <a href="#">Shop automotive deals</a>
+                </div>
+            </div>
+            <div class="col-3">
+                <div class="card p-3">
+                    <h5>Disney magic awaits</h5>
+                    <div class="row">
+                        <div class="col-12">
+                            <img class="w-100 img-thumbnail"
+                                src="https://images-na.ssl-images-amazon.com/images/W/WEBP_402378-T1/images/G/01/us-manual-merchandising/Worked-image/XCM_CUTTLE_1527103_2832184_379x304_1X_en_US._SY304_CB618097385_.jpg"
+                                alt="">
+                        </div>
+                    </div>
+                    <a href="#">Shop gifts</a>
+                </div>
+            </div>
+            <div class="col-3">
+                <div class="card p-3">
+                    <h5>Gift cards for the New Year</h5>
+                    <div class="row">
+                        <div class="col-12">
+                            <img class="w-100"
+                                src="https://images-na.ssl-images-amazon.com/images/W/WEBP_402378-T1/images/G/01/GiftCards/Consumer/multi-product/NYNY_2022/US_NYNY_GW_379x304_1x_EN._SY304_CB620097660_.jpg"
+                                alt="">
+                        </div>
+                    </div>
+                    <a href="#">Shop gift cards</a>
+                </div>
+            </div>
+            <div class="col-3">
+                <div class="card p-3">
+                    <h5>Characters you love</h5>
+                    <div class="row">
+                        <div class="col-6">
+                            <img class="w-100"
+                                src="https://images-na.ssl-images-amazon.com/images/W/WEBP_402378-T1/images/G/01/Automotive/DGM/Gift_Guide_6_quad_186x116._SY116_CB607432844_.jpg"
+                                alt="">
+                            <div>Cleaning Kits</div>
+                        </div>
+                        <div class="col-6">
+                            <img class="w-100"
+                                src="https://images-na.ssl-images-amazon.com/images/W/WEBP_402378-T1/images/G/01/Automotive/DGM/Vacuum_1_186x116._SY116_CB631808133_.jpg"
+                                alt="">
+                            <div>Vacuum</div>
+                        </div>
+                    </div>
+                    <div class="row mt-3">
+                        <div class="col-6">
+                            <img class="w-100"
+                                src="https://images-na.ssl-images-amazon.com/images/W/WEBP_402378-T1/images/G/01/Automotive/DGM/Wipes_186_116._SY116_CB626640630_.jpg"
+                                alt="">
+                            <div>Wipes</div>
+                        </div>
+                        <div class="col-6"> <img class="w-100"
+                                src="https://images-na.ssl-images-amazon.com/images/W/WEBP_402378-T1/images/G/01/Automotive/DGM/Car_care_gel_v2_186x116._SY116_CB619399951_.jpg"
+                                alt="">
+                            <div>Gel</div>
+                        </div>
+                    </div>
+                    <a href="#">Shop automotive deals</a>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <h2>Table</h2>
+            <table class="table table-striped table-hover">
+                <thead>
+                    <tr class="table-danger">
+                        <th>Firstname</th>
+                        <th>Lastname</th>
+                        <th>Email</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>John</td>
+                        <td>Doe</td>
+                        <td>john@example.com</td>
+                    </tr>
+                    <tr>
+                        <td>Mary</td>
+                        <td>Moe</td>
+                        <td>mary@example.com</td>
+                    </tr>
+                    <tr>
+                        <td>July</td>
+                        <td>Dooley</td>
+                        <td>july@example.com</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+    <!-- Accordion  -->
+
+    <div class="container mt-3 mb-5">
+        <h2>Accordion Example</h2>
+        <p><strong>Note:</strong> The <strong>data-bs-parent</strong> attribute makes sure that all collapsible elements
+            under the specified parent will be closed when one of the collapsible item is shown.</p>
+        <div id="accordion">
+            <div class="card">
+                <div class="card-header">
+                    <a class="btn" data-bs-toggle="collapse" href="#collapseOne">
+                        Collapsible Group Item #1
+                    </a>
+                </div>
+                <div id="collapseOne" class="collapse show" data-bs-parent="#accordion">
+                    <div class="card-body">
+                        1. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+                        labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                        laboris nisi ut aliquip ex ea commodo consequat.
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header">
+                    <a class="collapsed btn" data-bs-toggle="collapse" href="#collapseTwo">
+                        Collapsible Group Item #2
+                    </a>
+                </div>
+                <div id="collapseTwo" class="collapse" data-bs-parent="#accordion">
+                    <div class="card-body">
+                        2. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+                        labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                        laboris nisi ut aliquip ex ea commodo consequat.
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header">
+                    <a class="collapsed btn" data-bs-toggle="collapse" href="#collapseThree">
+                        Collapsible Group Item #3
+                    </a>
+                </div>
+                <div id="collapseThree" class="collapse" data-bs-parent="#accordion">
+                    <div class="card-body">
+                        3. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+                        labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                        laboris nisi ut aliquip ex ea commodo consequat.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

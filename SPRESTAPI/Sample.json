@@ -1,0 +1,19 @@
+{
+  "FirstName": "John",
+  "LastName": "Do",
+  "Age": 30,
+  "Children": [
+    {
+      "Name": "Tracy",
+      "FavoriteColor": "blue"
+    },
+    {
+      "Name": "Christy",
+      "FavoriteColor": "yellow"
+    },
+    {
+      "Name": "Chris",
+      "FavoriteColor": "red"
+    }
+  ]
+}
