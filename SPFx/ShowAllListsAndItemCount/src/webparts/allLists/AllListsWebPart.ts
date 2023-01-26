@@ -5,80 +5,64 @@ import {
 } from '@microsoft/sp-property-pane';
 import { BaseClientSideWebPart } from '@microsoft/sp-webpart-base';
 import { IReadonlyTheme } from '@microsoft/sp-component-base';
-import { escape } from '@microsoft/sp-lodash-subset';
+import { SPComponentLoader } from "@microsoft/sp-loader";
+import { SPHttpClient } from "@microsoft/sp-http";
 
-import styles from './AllListsWebPart.module.scss';
-import * as strings from 'AllListsWebPartStrings';
+
 
 export interface IAllListsWebPartProps {
   description: string;
+  webpartTitle: string;
 }
 
 export default class AllListsWebPart extends BaseClientSideWebPart<IAllListsWebPartProps> {
 
-  private _isDarkTheme: boolean = false;
-  private _environmentMessage: string = '';
+  listsHtml: string;
 
   public render(): void {
+    //bootstrap cdn css link      
+    let cssLink = "https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css";
+    //Use SPComponentLoader object to reference CDN Css link to your project
+    SPComponentLoader.loadCss(cssLink);
+
+
+
     this.domElement.innerHTML = `
-    <section class="${styles.allLists} ${!!this.context.sdks.microsoftTeams ? styles.teams : ''}">
-      <div class="${styles.welcome}">
-        <img alt="" src="${this._isDarkTheme ? require('./assets/welcome-dark.png') : require('./assets/welcome-light.png')}" class="${styles.welcomeImage}" />
-        <h2>Well done, ${escape(this.context.pageContext.user.displayName)}!</h2>
-        <div>${this._environmentMessage}</div>
-        <div>Web part property value: <strong>${escape(this.properties.description)}</strong></div>
-      </div>
-      <div>
-        <h3>Welcome to SharePoint Framework!</h3>
-        <p>
-        The SharePoint Framework (SPFx) is a extensibility model for Microsoft Viva, Microsoft Teams and SharePoint. It's the easiest way to extend Microsoft 365 with automatic Single Sign On, automatic hosting and industry standard tooling.
-        </p>
-        <h4>Learn more about SPFx development:</h4>
-          <ul class="${styles.links}">
-            <li><a href="https://aka.ms/spfx" target="_blank">SharePoint Framework Overview</a></li>
-            <li><a href="https://aka.ms/spfx-yeoman-graph" target="_blank">Use Microsoft Graph in your solution</a></li>
-            <li><a href="https://aka.ms/spfx-yeoman-teams" target="_blank">Build for Microsoft Teams using SharePoint Framework</a></li>
-            <li><a href="https://aka.ms/spfx-yeoman-viva" target="_blank">Build for Microsoft Viva Connections using SharePoint Framework</a></li>
-            <li><a href="https://aka.ms/spfx-yeoman-store" target="_blank">Publish SharePoint Framework applications to the marketplace</a></li>
-            <li><a href="https://aka.ms/spfx-yeoman-api" target="_blank">SharePoint Framework API reference</a></li>
-            <li><a href="https://aka.ms/m365pnp" target="_blank">Microsoft 365 Developer Community</a></li>
-          </ul>
-      </div>
-    </section>`;
+              <ol class="list-group list-group-numbered">
+
+                ${this.listsHtml}
+
+              </ol>
+                `;
   }
 
-  protected onInit(): Promise<void> {
-    return this._getEnvironmentMessage().then(message => {
-      this._environmentMessage = message;
+  protected onInit(): Promise<void> {   
+    this.listsHtml = '';
+
+    return this._getSharePointLists().then(data => {
+      console.log('Data from SharePoint is ', data);
+      let lists = data.value;
+      for (let l of lists) {
+        console.log(`${l.Title} -  ${l.ItemCount} -  ${l.LastItemModifiedDate}`)
+        this.listsHtml += `
+        <li class="list-group-item d-flex justify-content-between align-items-start">
+          <div class="ms-2 me-auto">
+            <div class="fw-bold">${l.Title}</div>
+            ${(new Date(l.LastItemModifiedDate)).toLocaleDateString()}
+          </div>
+          <span class="badge bg-primary rounded-pill">${l.ItemCount}</span>
+        </li>`;
+      }
     });
   }
 
+  private _getSharePointLists() {
+    let api = "/_api/web/lists?$filter=Hidden eq false&$select=Title,ItemCount,LastItemModifiedDate";
+    let url = this.context.pageContext.web.absoluteUrl + api;
+    //Read SharePoint Data using REST end point url 
+    return this.context.spHttpClient.get(url, SPHttpClient.configurations.v1)
+      .then(response => response.json(), error => console.error('Oops error occured ', error));
 
-
-  private _getEnvironmentMessage(): Promise<string> {
-    if (!!this.context.sdks.microsoftTeams) { // running in Teams, office.com or Outlook
-      return this.context.sdks.microsoftTeams.teamsJs.app.getContext()
-        .then(context => {
-          let environmentMessage: string = '';
-          switch (context.app.host.name) {
-            case 'Office': // running in Office
-              environmentMessage = this.context.isServedFromLocalhost ? strings.AppLocalEnvironmentOffice : strings.AppOfficeEnvironment;
-              break;
-            case 'Outlook': // running in Outlook
-              environmentMessage = this.context.isServedFromLocalhost ? strings.AppLocalEnvironmentOutlook : strings.AppOutlookEnvironment;
-              break;
-            case 'Teams': // running in Teams
-              environmentMessage = this.context.isServedFromLocalhost ? strings.AppLocalEnvironmentTeams : strings.AppTeamsTabEnvironment;
-              break;
-            default:
-              throw new Error('Unknown host');
-          }
-
-          return environmentMessage;
-        });
-    }
-
-    return Promise.resolve(this.context.isServedFromLocalhost ? strings.AppLocalEnvironmentSharePoint : strings.AppSharePointEnvironment);
   }
 
   protected onThemeChanged(currentTheme: IReadonlyTheme | undefined): void {
@@ -86,7 +70,6 @@ export default class AllListsWebPart extends BaseClientSideWebPart<IAllListsWebP
       return;
     }
 
-    this._isDarkTheme = !!currentTheme.isInverted;
     const {
       semanticColors
     } = currentTheme;
@@ -108,14 +91,18 @@ export default class AllListsWebPart extends BaseClientSideWebPart<IAllListsWebP
       pages: [
         {
           header: {
-            description: strings.PropertyPaneDescription
+            description: "Configurations used for the details of webpart displaying All lists"
           },
           groups: [
             {
-              groupName: strings.BasicGroupName,
+              groupName: "General Setting",
               groupFields: [
+                PropertyPaneTextField('webpartTitle', {
+                  label: "Webpart Title"
+                }),
                 PropertyPaneTextField('description', {
-                  label: strings.DescriptionFieldLabel
+                  label: "Webpart Description",
+                  multiline: true
                 })
               ]
             }

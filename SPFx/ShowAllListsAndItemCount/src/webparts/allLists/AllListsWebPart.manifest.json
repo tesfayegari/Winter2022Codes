@@ -18,11 +18,11 @@
   "preconfiguredEntries": [{
     "groupId": "5c03119e-3074-46fd-976b-c60198311f70", // Advanced
     "group": { "default": "Advanced" },
-    "title": { "default": "AllLists" },
-    "description": { "default": "AllLists description" },
-    "officeFabricIconFontName": "Page",
+    "title": { "default": "All Lists" },
+    "description": { "default": "Lists all the Lists and Libraries" },
+    "officeFabricIconFontName": "PageList",
     "properties": {
-      "description": "AllLists"
+      "description": "My First Webpart"
     }
   }]
 }
