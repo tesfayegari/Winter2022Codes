@@ -40,3 +40,4 @@ WebURl/_api/web/lists(guid'ListGuid')/items
 One item detail when item ID = 4
 WebURl/_api/web/lists(guid'ListGuid')/items(4)
 WebURl/_api/web/lists/getbytitle('List Title')/items(4)
+

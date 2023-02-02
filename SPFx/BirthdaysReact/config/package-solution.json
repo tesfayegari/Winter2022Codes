@@ -1,0 +1,40 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/package-solution.schema.json",
+  "solution": {
+    "name": "birthdays-react-client-side-solution",
+    "id": "2ad819ad-a2ef-4151-83b9-42c218d99bed",
+    "version": "1.0.0.0",
+    "includeClientSideAssets": true,
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false,
+    "developer": {
+      "name": "",
+      "websiteUrl": "",
+      "privacyUrl": "",
+      "termsOfUseUrl": "",
+      "mpnId": "Undefined-1.16.1"
+    },
+    "metadata": {
+      "shortDescription": {
+        "default": "birthdays-react description"
+      },
+      "longDescription": {
+        "default": "birthdays-react description"
+      },
+      "screenshotPaths": [],
+      "videoUrl": "",
+      "categories": []
+    },
+    "features": [
+      {
+        "title": "birthdays-react Feature",
+        "description": "The feature that activates elements of the birthdays-react solution.",
+        "id": "e9c682c3-2563-495a-9900-5924f4247507",
+        "version": "1.0.0.0"
+      }
+    ]
+  },
+  "paths": {
+    "zippedPackage": "solution/birthdays-react.sppkg"
+  }
+}

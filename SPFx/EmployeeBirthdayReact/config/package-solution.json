@@ -1,0 +1,40 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/package-solution.schema.json",
+  "solution": {
+    "name": "employee-birthday-react-client-side-solution",
+    "id": "f2d355db-5199-4a3e-98c6-23f91437a3af",
+    "version": "1.0.0.0",
+    "includeClientSideAssets": true,
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false,
+    "developer": {
+      "name": "",
+      "websiteUrl": "",
+      "privacyUrl": "",
+      "termsOfUseUrl": "",
+      "mpnId": "Undefined-1.16.1"
+    },
+    "metadata": {
+      "shortDescription": {
+        "default": "employee-birthday-react description"
+      },
+      "longDescription": {
+        "default": "employee-birthday-react description"
+      },
+      "screenshotPaths": [],
+      "videoUrl": "",
+      "categories": []
+    },
+    "features": [
+      {
+        "title": "employee-birthday-react Feature",
+        "description": "The feature that activates elements of the employee-birthday-react solution.",
+        "id": "5cd532ec-e4dd-475e-a3e9-dd726cc39a9b",
+        "version": "1.0.0.0"
+      }
+    ]
+  },
+  "paths": {
+    "zippedPackage": "solution/employee-birthday-react.sppkg"
+  }
+}

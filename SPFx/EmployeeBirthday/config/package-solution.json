@@ -1,0 +1,40 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/package-solution.schema.json",
+  "solution": {
+    "name": "employee-birthday-client-side-solution",
+    "id": "bfdd5d5e-02e0-4cbc-a56e-5d09c060d132",
+    "version": "1.0.0.0",
+    "includeClientSideAssets": true,
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false,
+    "developer": {
+      "name": "",
+      "websiteUrl": "",
+      "privacyUrl": "",
+      "termsOfUseUrl": "",
+      "mpnId": "Undefined-1.16.1"
+    },
+    "metadata": {
+      "shortDescription": {
+        "default": "employee-birthday description"
+      },
+      "longDescription": {
+        "default": "employee-birthday description"
+      },
+      "screenshotPaths": [],
+      "videoUrl": "",
+      "categories": []
+    },
+    "features": [
+      {
+        "title": "employee-birthday Feature",
+        "description": "The feature that activates elements of the employee-birthday solution.",
+        "id": "060aed24-98e6-4f2e-9df4-557e90521ead",
+        "version": "1.0.0.0"
+      }
+    ]
+  },
+  "paths": {
+    "zippedPackage": "solution/employee-birthday.sppkg"
+  }
+}

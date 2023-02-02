@@ -1,7 +1,8 @@
 import { Version } from '@microsoft/sp-core-library';
 import {
   IPropertyPaneConfiguration,
-  PropertyPaneTextField
+  PropertyPaneTextField,
+  PropertyPaneToggle
 } from '@microsoft/sp-property-pane';
 import { BaseClientSideWebPart } from '@microsoft/sp-webpart-base';
 import { IReadonlyTheme } from '@microsoft/sp-component-base';
@@ -13,6 +14,7 @@ import { SPHttpClient } from "@microsoft/sp-http";
 export interface IAllListsWebPartProps {
   description: string;
   webpartTitle: string;
+  showToggle: boolean;
 }
 
 export default class AllListsWebPart extends BaseClientSideWebPart<IAllListsWebPartProps> {
@@ -25,9 +27,13 @@ export default class AllListsWebPart extends BaseClientSideWebPart<IAllListsWebP
     //Use SPComponentLoader object to reference CDN Css link to your project
     SPComponentLoader.loadCss(cssLink);
 
+    let desc = this.properties.showToggle ?  `
+              <h2>${this.properties.webpartTitle}</h2>
+              <p>${this.properties.description}</p>` : '';
 
 
     this.domElement.innerHTML = `
+              ${desc}
               <ol class="list-group list-group-numbered">
 
                 ${this.listsHtml}
@@ -97,12 +103,19 @@ export default class AllListsWebPart extends BaseClientSideWebPart<IAllListsWebP
             {
               groupName: "General Setting",
               groupFields: [
-                PropertyPaneTextField('webpartTitle', {
-                  label: "Webpart Title"
+                PropertyPaneToggle('showToggle',{
+                  label: "Show Title and Desc",
+                  onText: 'Show',
+                  offText: 'Hide'
+                }),
+                PropertyPaneTextField('webpartTitle', { 
+                  label: "Webpart Title",
+                  disabled: !this.properties.showToggle
                 }),
                 PropertyPaneTextField('description', {
                   label: "Webpart Description",
-                  multiline: true
+                  multiline: true,
+                  disabled: !this.properties.showToggle
                 })
               ]
             }
